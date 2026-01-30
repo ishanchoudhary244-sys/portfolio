@@ -47,29 +47,25 @@ const AboutSection = () => {
             transition={{ duration: 0.8 }}
           >
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              I'm a full-stack web developer with a deep passion for artificial intelligence
-              and its applications in creating smarter, more intuitive digital experiences.
-              With expertise in modern frameworks and AI technologies, I bridge the gap between
-              innovative ideas and functional reality.
+              I'm a BCA student and an aspiring Web Developer with a strong focus on building modern, AI-powered products. I am deeply passionate about crafting clean, intuitive UI/UX and integrating AI tools to solve real-world problems.
+
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              My approach combines clean, maintainable code with creative problem-solving,
-              ensuring every project not only meets technical standards but also delivers
-              exceptional user experiences.
+              With a curious mindset and a relentless drive for learning, I'm constantly exploring new technologies to build future-ready web experiences. I am currently looking for internship opportunities or junior developer roles where I can contribute and grow.
             </p>
 
             <div className="flex flex-wrap gap-4">
               <div className="glass-card px-6 py-4">
-                <div className="text-2xl font-bold gradient-text">3+</div>
-                <div className="text-sm text-muted-foreground">Years Experience</div>
+                <div className="text-3xl font-bold gradient-text">15+</div>
+                <div className="text-sm text-muted-foreground">Projects Done</div>
               </div>
               <div className="glass-card px-6 py-4">
-                <div className="text-2xl font-bold gradient-text">50+</div>
-                <div className="text-sm text-muted-foreground">Projects Completed</div>
+                <div className="text-3xl font-bold gradient-text">100%</div>
+                <div className="text-sm text-muted-foreground">Learning Mindset</div>
               </div>
               <div className="glass-card px-6 py-4">
-                <div className="text-2xl font-bold gradient-text">20+</div>
-                <div className="text-sm text-muted-foreground">AI Integrations</div>
+                <div className="text-3xl font-bold gradient-text">12+</div>
+                <div className="text-sm text-muted-foreground">AI Toolsets</div>
               </div>
             </div>
           </motion.div>

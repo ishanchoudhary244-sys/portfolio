@@ -17,21 +17,6 @@ const services = [
     description: 'Optimizing core web vitals and AI inference speeds for maximum efficiency and seamless user experience.',
     icon: <Zap className="h-6 w-6" />,
   },
-  {
-    title: 'Neural Networks',
-    description: 'Building custom AI models and neural patterns that enhance digital interactions and automated workflows.',
-    icon: <Globe className="h-6 w-6" />,
-  },
-  {
-    title: 'Mobile Intelligence',
-    description: 'Crafting responsive interfaces that leverage device-side machine learning for real-time optimizations.',
-    icon: <Smartphone className="h-6 w-6" />,
-  },
-  {
-    title: 'Digital Security',
-    description: 'Implementing high-end encryption and AI-driven security protocols to ensure data integrity.',
-    icon: <Shield className="h-6 w-6" />,
-  },
 ];
 
 const SkillsSection = () => {

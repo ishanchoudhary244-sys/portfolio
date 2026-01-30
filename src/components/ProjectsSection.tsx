@@ -8,6 +8,7 @@ const projects = [
     description: 'A high-performance neural engine for real-time edge computing and automated decision making.',
     tags: ['Next.js', 'TensorFlow', 'PostgreSQL'],
     image: 'public/SHOES.png',
+    liveLink: 'https://shoes-web-nike-04.netlify.app/',
   },
   {
     title: 'Neural Analytics',
@@ -37,7 +38,7 @@ const ProjectsSection = () => {
               viewport={{ once: true }}
               className="section-subheading"
             >
-            
+
             </motion.span>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -81,7 +82,12 @@ const ProjectsSection = () => {
                   <a href="#" className="h-16 w-16 rounded-full bg-black text-white flex items-center justify-center transition-all hover:scale-110 hover:shadow-xl active:scale-95">
                     <Github className="h-7 w-7" />
                   </a>
-                  <a href="#" className="h-16 w-16 rounded-full bg-[#FF1A1A] text-white flex items-center justify-center transition-all hover:scale-110 hover:shadow-2xl hover:shadow-red-500/40 active:scale-95">
+                  <a
+                    href={project.liveLink || "#"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="h-16 w-16 rounded-full bg-[#FF1A1A] text-white flex items-center justify-center transition-all hover:scale-110 hover:shadow-2xl hover:shadow-red-500/40 active:scale-95"
+                  >
                     <ExternalLink className="h-7 w-7" />
                   </a>
                 </div>
@@ -106,9 +112,14 @@ const ProjectsSection = () => {
                   </div>
                 </div>
 
-                <div className="h-14 w-14 rounded-full border border-black/5 flex items-center justify-center text-black/20 transition-all group-hover:bg-[#FF1A1A] group-hover:text-white group-hover:border-[#FF1A1A] group-hover:rotate-45 group-hover:shadow-lg group-hover:shadow-red-500/20">
+                <a
+                  href={project.liveLink || "#"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="h-14 w-14 rounded-full border border-black/5 flex items-center justify-center text-black/20 transition-all group-hover:bg-[#FF1A1A] group-hover:text-white group-hover:border-[#FF1A1A] group-hover:rotate-45 group-hover:shadow-lg group-hover:shadow-red-500/20"
+                >
                   <ArrowUpRight className="h-6 w-6" />
-                </div>
+                </a>
               </div>
             </motion.div>
           ))}
