@@ -4,27 +4,6 @@ import { ArrowRight, Sparkles } from 'lucide-react';
 const HeroSection = () => {
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden px-6 pt-32 pb-20">
-      {/* AI Wave Background Elements */}
-      <div className="absolute top-[-10%] right-[-10%] h-[600px] w-[600px] rounded-full bg-[#FF1A1A]/5 blur-[120px] animate-pulse-glow" />
-      <div className="absolute bottom-[-10%] left-[-10%] h-[500px] w-[500px] rounded-full bg-[#FF1A1A]/5 blur-[100px] animate-pulse-glow" style={{ animationDelay: '2s' }} />
-
-      {/* Animated AI Gradient Wave */}
-      <div className="absolute top-1/2 -right-20 -translate-y-1/2 w-[40%] h-[80%] opacity-20 pointer-events-none overflow-hidden">
-        <motion.div
-          animate={{
-            y: [0, -20, 0],
-            rotate: [0, 5, 0],
-            scale: [1, 1.1, 1],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="w-full h-full bg-gradient-to-l from-[#FF1A1A] to-transparent blur-[80px] rounded-full"
-        />
-      </div>
-
       <div className="relative z-10 mx-auto max-w-7xl w-full">
         <div className="flex flex-col items-start max-w-4xl">
           <motion.div
@@ -46,7 +25,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="section-heading mb-8 relative"
           >
-            <span className="relative z-10 block">CREATIVE</span>
+            <span className="relative z-10 block">WEB</span>
             <span className="gradient-text block">DEVELOPER</span>
 
             {/* Subtle glow behind text */}
@@ -57,10 +36,10 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="max-w-xl text-xl text-black/60 md:text-2xl font-medium md:leading-relaxed mb-12"
+            className="max-w-xl text-lg text-black/60 md:text-xl font-medium md:leading-relaxed mb-12"
           >
-            I build <span className="text-black font-bold">next-generation</span> digital products with
-            <span className="text-[#FF1A1A] font-bold"> AI intelligence</span> and premium modern aesthetics.
+            Building modern,,  <span className="text-black font-bold"> AI-powered web experiences</span>  using React, JavaScript, Tailwind CSS, UI/UX
+            <span className="text-[#FF1A1A] font-bold"> and AI-integrated web apps</span>
           </motion.p>
 
           <div className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto">

@@ -36,9 +36,7 @@ const services = [
 
 const SkillsSection = () => {
   return (
-    <section id="skills" className="relative py-32 px-6 overflow-hidden bg-secondary/50">
-      <div className="absolute top-[10%] right-[-10%] h-[400px] w-[400px] rounded-full bg-[#FF1A1A]/5 blur-[120px]" />
-
+    <section id="skills" className="relative py-32 px-6 overflow-hidden">
       <div className="relative mx-auto max-w-7xl">
         <div className="mb-24">
           <motion.span
@@ -73,7 +71,7 @@ const SkillsSection = () => {
               <div className="mb-10 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-white shadow-sm border border-black/5 text-[#FF1A1A] transition-all group-hover:bg-[#FF1A1A] group-hover:text-white group-hover:scale-110 group-hover:rotate-3 group-hover:shadow-lg group-hover:shadow-red-500/20">
                 {service.icon}
               </div>
-              <h3 className="text-2xl font-black mb-4 text-black uppercase tracking-tight leading-none">{service.title}</h3>
+              <h3 className="text-xl font-black mb-4 text-black uppercase tracking-tight leading-none">{service.title}</h3>
               <p className="text-black/50 text-base leading-relaxed mb-10">
                 {service.description}
               </p>

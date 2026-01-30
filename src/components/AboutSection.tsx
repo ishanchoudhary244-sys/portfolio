@@ -32,7 +32,7 @@ const AboutSection = () => {
           className="text-center mb-16"
         >
           <span className="section-title">About Me</span>
-          <h2 className="mt-4 text-3xl font-bold sm:text-4xl lg:text-5xl">
+          <h2 className="mt-4 text-2xl font-bold sm:text-3xl lg:text-4xl">
             Passionate about creating the{' '}
             <span className="gradient-text">future of the web</span>
           </h2>
@@ -47,28 +47,28 @@ const AboutSection = () => {
             transition={{ duration: 0.8 }}
           >
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              I'm a full-stack web developer with a deep passion for artificial intelligence 
-              and its applications in creating smarter, more intuitive digital experiences. 
-              With expertise in modern frameworks and AI technologies, I bridge the gap between 
+              I'm a full-stack web developer with a deep passion for artificial intelligence
+              and its applications in creating smarter, more intuitive digital experiences.
+              With expertise in modern frameworks and AI technologies, I bridge the gap between
               innovative ideas and functional reality.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              My approach combines clean, maintainable code with creative problem-solving, 
-              ensuring every project not only meets technical standards but also delivers 
+              My approach combines clean, maintainable code with creative problem-solving,
+              ensuring every project not only meets technical standards but also delivers
               exceptional user experiences.
             </p>
 
             <div className="flex flex-wrap gap-4">
               <div className="glass-card px-6 py-4">
-                <div className="text-3xl font-bold gradient-text">3+</div>
+                <div className="text-2xl font-bold gradient-text">3+</div>
                 <div className="text-sm text-muted-foreground">Years Experience</div>
               </div>
               <div className="glass-card px-6 py-4">
-                <div className="text-3xl font-bold gradient-text">50+</div>
+                <div className="text-2xl font-bold gradient-text">50+</div>
                 <div className="text-sm text-muted-foreground">Projects Completed</div>
               </div>
               <div className="glass-card px-6 py-4">
-                <div className="text-3xl font-bold gradient-text">20+</div>
+                <div className="text-2xl font-bold gradient-text">20+</div>
                 <div className="text-sm text-muted-foreground">AI Integrations</div>
               </div>
             </div>

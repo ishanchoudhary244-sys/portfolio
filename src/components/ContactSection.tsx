@@ -26,7 +26,7 @@ const ContactSection = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!name.trim() || !email.trim() || !message.trim()) {
       setSubmitStatus('error');
       setErrorMessage('Please fill in all fields');
@@ -66,9 +66,6 @@ const ContactSection = () => {
 
   return (
     <section id="contact" className="relative py-32 px-6">
-      {/* Background gradient */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[400px] w-full max-w-4xl rounded-full bg-gradient-to-r from-primary/20 via-accent/10 to-primary/20 blur-[120px]" />
-
       <div className="relative mx-auto max-w-4xl">
         {/* Section Header */}
         <motion.div

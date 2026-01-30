@@ -3,8 +3,8 @@ import { ExternalLink, Github, ArrowUpRight } from 'lucide-react';
 
 const projects = [
   {
-    title: 'Cognitive Engine',
-    category: 'AI Platform',
+    title: 'Nike Shoes E-commerce Platform',
+    category: 'Shoes E-commerce Platform',
     description: 'A high-performance neural engine for real-time edge computing and automated decision making.',
     tags: ['Next.js', 'TensorFlow', 'PostgreSQL'],
     image: 'public/SHOES.png',
@@ -27,13 +27,7 @@ const projects = [
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="relative py-32 px-6 bg-white">
-      {/* AI Subtle Grid Overlay */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
-        style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, black 1px, transparent 0)', backgroundSize: '40px 40px' }} />
-
-      <div className="absolute bottom-[20%] left-[-10%] h-[500px] w-[500px] rounded-full bg-[#FF1A1A]/5 blur-[120px] pointer-events-none" />
-
+    <section id="projects" className="relative py-32 px-6">
       <div className="mx-auto max-w-7xl relative z-10">
         <div className="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-12">
           <div className="max-w-2xl">
@@ -43,7 +37,7 @@ const ProjectsSection = () => {
               viewport={{ once: true }}
               className="section-subheading"
             >
-              Case Studies
+            
             </motion.span>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -51,7 +45,7 @@ const ProjectsSection = () => {
               viewport={{ once: true }}
               className="section-heading"
             >
-              SELECTED <br />
+              <br />
               <span className="gradient-text">PROJECTS</span>
             </motion.h2>
           </div>
@@ -65,7 +59,7 @@ const ProjectsSection = () => {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
@@ -99,7 +93,7 @@ const ProjectsSection = () => {
                     <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#FF1A1A] bg-red-500/5 px-3 py-1 rounded-full">{project.category}</span>
                     <div className="h-[1px] flex-1 bg-black/5" />
                   </div>
-                  <h3 className="text-4xl font-black uppercase tracking-tighter text-black mb-6 transition-colors group-hover:text-[#FF1A1A] leading-none">{project.title}</h3>
+                  <h3 className="text-3xl font-black uppercase tracking-tighter text-black mb-6 transition-colors group-hover:text-[#FF1A1A] leading-none">{project.title}</h3>
                   <p className="text-black/50 text-base max-w-sm leading-relaxed mb-8">
                     {project.description}
                   </p>
