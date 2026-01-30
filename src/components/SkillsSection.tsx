@@ -1,70 +1,86 @@
 import { motion } from 'framer-motion';
+import { Layout, Code, Zap, Smartphone, Globe, Shield, ArrowUpRight } from 'lucide-react';
 
-const skillCategories = [
+const services = [
   {
-    title: 'Frontend',
-    skills: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+    title: 'AI Development',
+    description: 'Expertly crafting high-performance, scalable web applications with advanced AI integration and modern tech stacks.',
+    icon: <Code className="h-6 w-6" />,
   },
   {
-    title: 'Backend',
-    skills: ['Node.js', 'Python', 'PostgreSQL', 'MongoDB', 'RESTful APIs'],
+    title: 'Futuristic Design',
+    description: 'Creating premium, AI-style digital experiences with focus on motion design and user-centric interfaces.',
+    icon: <Layout className="h-6 w-6" />,
   },
   {
-    title: 'AI & ML',
-    skills: ['OpenAI API', 'LangChain', 'TensorFlow',  'Vector DBs'],
+    title: 'Hyper Performance',
+    description: 'Optimizing core web vitals and AI inference speeds for maximum efficiency and seamless user experience.',
+    icon: <Zap className="h-6 w-6" />,
   },
   {
-    title: 'Tools & DevOps',
-    skills: ['Git', 'Docker', 'AWS', 'Vercel', 'CI/CD'],
+    title: 'Neural Networks',
+    description: 'Building custom AI models and neural patterns that enhance digital interactions and automated workflows.',
+    icon: <Globe className="h-6 w-6" />,
+  },
+  {
+    title: 'Mobile Intelligence',
+    description: 'Crafting responsive interfaces that leverage device-side machine learning for real-time optimizations.',
+    icon: <Smartphone className="h-6 w-6" />,
+  },
+  {
+    title: 'Digital Security',
+    description: 'Implementing high-end encryption and AI-driven security protocols to ensure data integrity.',
+    icon: <Shield className="h-6 w-6" />,
   },
 ];
 
 const SkillsSection = () => {
   return (
-    <section id="skills" className="relative py-32 px-6">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-secondary/20 to-transparent pointer-events-none" />
+    <section id="skills" className="relative py-32 px-6 overflow-hidden bg-secondary/50">
+      <div className="absolute top-[10%] right-[-10%] h-[400px] w-[400px] rounded-full bg-[#FF1A1A]/5 blur-[120px]" />
 
-      <div className="relative mx-auto max-w-6xl">
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <span className="section-title">Skills & Expertise</span>
-          <h2 className="mt-4 text-3xl font-bold sm:text-4xl lg:text-5xl">
-            Technologies I work with
-          </h2>
-        </motion.div>
+      <div className="relative mx-auto max-w-7xl">
+        <div className="mb-24">
+          <motion.span
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="section-subheading"
+          >
+            Capabilities
+          </motion.span>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="section-heading"
+          >
+            INTELLIGENT <br />
+            <span className="gradient-text">SOLUTIONS</span>
+          </motion.h2>
+        </div>
 
-        {/* Skills Grid */}
-        <div className="grid gap-8 md:grid-cols-2">
-          {skillCategories.map((category, categoryIndex) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, index) => (
             <motion.div
-              key={category.title}
+              key={service.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
-              className="glass-card glow-border p-8"
+              transition={{ delay: index * 0.1 }}
+              className="glass-card group p-12 hover:border-[#FF1A1A]/20"
             >
-              <h3 className="text-xl font-semibold mb-6 gradient-text">{category.title}</h3>
-              <div className="flex flex-wrap gap-3">
-                {category.skills.map((skill, skillIndex) => (
-                  <motion.span
-                    key={skill}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: categoryIndex * 0.1 + skillIndex * 0.05 }}
-                    className="skill-badge"
-                  >
-                    {skill}
-                  </motion.span>
-                ))}
+              <div className="mb-10 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-white shadow-sm border border-black/5 text-[#FF1A1A] transition-all group-hover:bg-[#FF1A1A] group-hover:text-white group-hover:scale-110 group-hover:rotate-3 group-hover:shadow-lg group-hover:shadow-red-500/20">
+                {service.icon}
+              </div>
+              <h3 className="text-2xl font-black mb-4 text-black uppercase tracking-tight leading-none">{service.title}</h3>
+              <p className="text-black/50 text-base leading-relaxed mb-10">
+                {service.description}
+              </p>
+
+              <div className="flex items-center justify-between">
+                <div className="h-[1px] w-12 bg-black/10 group-hover:w-full group-hover:bg-[#FF1A1A]/20 transition-all duration-500" />
+                <ArrowUpRight className="h-5 w-5 text-black/20 group-hover:text-[#FF1A1A] transition-colors" />
               </div>
             </motion.div>
           ))}

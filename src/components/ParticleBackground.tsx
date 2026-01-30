@@ -30,7 +30,7 @@ const ParticleBackground = () => {
     const createParticles = () => {
       const particles: Particle[] = [];
       const count = Math.floor((window.innerWidth * window.innerHeight) / 15000);
-      
+
       for (let i = 0; i < count; i++) {
         particles.push({
           x: Math.random() * canvas.width,
@@ -61,7 +61,7 @@ const ParticleBackground = () => {
         // Draw particle
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fillStyle = `hsla(270, 80%, 70%, ${particle.opacity})`;
+        ctx.fillStyle = `rgba(255, 26, 26, ${particle.opacity * 0.2})`;
         ctx.fill();
 
         // Draw connections
@@ -74,12 +74,8 @@ const ParticleBackground = () => {
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(other.x, other.y);
-            const gradient = ctx.createLinearGradient(
-              particle.x, particle.y, other.x, other.y
-            );
-            gradient.addColorStop(0, `hsla(270, 80%, 60%, ${0.15 * (1 - distance / 120)})`);
-            gradient.addColorStop(1, `hsla(200, 90%, 60%, ${0.15 * (1 - distance / 120)})`);
-            ctx.strokeStyle = gradient;
+            const alpha = 0.1 * (1 - distance / 120);
+            ctx.strokeStyle = `rgba(255, 26, 26, ${alpha})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }

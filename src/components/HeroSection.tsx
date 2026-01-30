@@ -1,94 +1,111 @@
 import { motion } from 'framer-motion';
-import { ArrowDown, Sparkles } from 'lucide-react';
+import { ArrowRight, Sparkles } from 'lucide-react';
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-6 pt-24">
-      {/* Gradient orbs */}
-      <div className="absolute top-1/4 left-1/4 h-96 w-96 rounded-full bg-gradient-to-r from-primary/30 to-accent/20 blur-[120px] animate-pulse-glow" />
-      <div className="absolute bottom-1/4 right-1/4 h-80 w-80 rounded-full bg-gradient-to-r from-accent/30 to-primary/20 blur-[100px] animate-pulse-glow" style={{ animationDelay: '1.5s' }} />
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden px-6 pt-32 pb-20">
+      {/* AI Wave Background Elements */}
+      <div className="absolute top-[-10%] right-[-10%] h-[600px] w-[600px] rounded-full bg-[#FF1A1A]/5 blur-[120px] animate-pulse-glow" />
+      <div className="absolute bottom-[-10%] left-[-10%] h-[500px] w-[500px] rounded-full bg-[#FF1A1A]/5 blur-[100px] animate-pulse-glow" style={{ animationDelay: '2s' }} />
 
-      <div className="relative z-10 mx-auto max-w-5xl text-center">
-        {/* Badge */}
+      {/* Animated AI Gradient Wave */}
+      <div className="absolute top-1/2 -right-20 -translate-y-1/2 w-[40%] h-[80%] opacity-20 pointer-events-none overflow-hidden">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mb-8 inline-flex items-center gap-2 rounded-full border border-border/50 bg-secondary/50 px-4 py-2 backdrop-blur-sm"
-        >
-          <Sparkles className="h-4 w-4 text-accent" />
-          <span className="text-sm text-muted-foreground">Available for freelance projects</span>
-        </motion.div>
+          animate={{
+            y: [0, -20, 0],
+            rotate: [0, 5, 0],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="w-full h-full bg-gradient-to-l from-[#FF1A1A] to-transparent blur-[80px] rounded-full"
+        />
+      </div>
 
-        {/* Main Headline */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-6 text-4xl font-black leading-tight tracking-tight sm:text-5xl md:text-6xl lg:text-7xl"
-        >
-          <span className="text-foreground">Web Developer</span>
-          <br />
-          <span className="gradient-text gradient-text-glow">building modern</span>
-          <br />
-          <span className="gradient-text gradient-text-glow">AI-powered</span>
-          <span className="text-foreground"> web</span>
-          <br />
-          <span className="text-foreground">experiences</span>
-        </motion.h1>
-
-        {/* Subtitle */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="mx-auto mb-10 max-w-2xl text-lg text-muted-foreground sm:text-xl"
-        >
-          Crafting cutting-edge digital experiences that blend stunning design 
-          with intelligent functionality. Let's build something extraordinary.
-        </motion.p>
-
-        {/* CTA Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
-        >
-          <motion.a
-            href="#projects"
-            className="btn-gradient"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+      <div className="relative z-10 mx-auto max-w-7xl w-full">
+        <div className="flex flex-col items-start max-w-4xl">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            className="mb-8 inline-flex items-center gap-2 rounded-full border border-black/5 bg-black/5 px-4 py-1.5"
           >
-            View My Work
-          </motion.a>
-          <motion.a
-            href="#contact"
-            className="btn-ghost"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Get In Touch
-          </motion.a>
-        </motion.div>
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF1A1A] opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#FF1A1A]"></span>
+            </span>
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-black/60">Available for Freelance</span>
+          </motion.div>
 
-        {/* Scroll indicator */}
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="section-heading mb-8 relative"
+          >
+            <span className="relative z-10 block">CREATIVE</span>
+            <span className="gradient-text block">DEVELOPER</span>
+
+            {/* Subtle glow behind text */}
+            <div className="absolute -top-10 -left-10 w-full h-full bg-[#FF1A1A]/10 blur-[100px] -z-10 animate-pulse-glow" />
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="max-w-xl text-xl text-black/60 md:text-2xl font-medium md:leading-relaxed mb-12"
+          >
+            I build <span className="text-black font-bold">next-generation</span> digital products with
+            <span className="text-[#FF1A1A] font-bold"> AI intelligence</span> and premium modern aesthetics.
+          </motion.p>
+
+          <div className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              <a href="#projects" className="btn-primary flex items-center gap-3">
+                Watch Portfolio
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+            >
+              <a href="#contact" className="btn-outline">
+                Contact Me
+              </a>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          className="absolute bottom-[-100px] left-0 hidden lg:block"
         >
-          <motion.a
+          <a
             href="#about"
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+            className="flex items-center gap-4 text-black/20 hover:text-black transition-colors group"
           >
-            <span className="text-xs uppercase tracking-widest">Scroll</span>
-            <ArrowDown className="h-4 w-4" />
-          </motion.a>
+            <span className="text-[10px] font-bold uppercase tracking-[0.4em] rotate-180 [writing-mode:vertical-lr] py-4">Explore</span>
+            <div className="h-16 w-[1px] bg-black/5 relative overflow-hidden">
+              <motion.div
+                animate={{ y: [0, 40, 0] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute top-0 left-0 w-full h-1/2 bg-[#FF1A1A]"
+              />
+            </div>
+          </a>
         </motion.div>
       </div>
     </section>
