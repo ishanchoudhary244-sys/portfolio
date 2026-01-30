@@ -3,10 +3,10 @@ import { ExternalLink, Github } from 'lucide-react';
 
 const projects = [
   {
-    title: 'E-Commerce Platform',
-    description: 'A full-stack e-commerce solution with real-time inventory, secure payments, and an intuitive admin dashboard.',
-    tags: ['Next.js', 'Stripe', 'PostgreSQL', 'Tailwind'],
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=500&fit=crop',
+    title: 'Shoes website',
+    description: 'A full-stack shoes website with real-time inventory, secure payments, and an intuitive admin dashboard.',
+    tags: ['HTML', 'CSS', 'JavaScript', 'Tailwind CSS', ],
+    image: 'public/SHOES.png',
   },
   {
     title: 'Social Dashboard',
