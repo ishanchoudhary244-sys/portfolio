@@ -3,11 +3,11 @@ import { ExternalLink, Github, ArrowUpRight } from 'lucide-react';
 
 const projects = [
   {
-    title: 'Nike Shoes E-commerce Platform',
-    category: 'Shoes E-commerce Platform',
-    description: 'A high-performance neural engine for real-time edge computing and automated decision making.',
-    tags: ['Next.js', 'TensorFlow', 'PostgreSQL'],
-    image: 'public/Screenshot 2026-01-30 113648.png',
+    title: 'Nike Shoes Website',
+    category: 'Nike E-commerce',
+    description: 'A premium, responsive e-commerce experience for Nike footwear with modern design and smooth interactions.',
+    tags: ['React', 'Tailwind CSS', 'Vite'],
+    image: '/Screenshot 2026-01-30 113648.png',
     liveLink: 'https://shoes-web-nike-04.netlify.app/',
   },
   {
