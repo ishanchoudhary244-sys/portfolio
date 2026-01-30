@@ -3,46 +3,48 @@ import { ArrowRight, Sparkles } from 'lucide-react';
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden px-6 pt-32 pb-20">
-      <div className="relative z-10 mx-auto max-w-7xl w-full">
-        <div className="flex flex-col items-start max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mb-8 inline-flex items-center gap-2 rounded-full border border-black/5 bg-black/5 px-4 py-1.5"
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF1A1A] opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#FF1A1A]"></span>
-            </span>
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-black/60">Available for Freelance</span>
-          </motion.div>
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden px-6 pt-44 md:pt-52 pb-20">
+      <div className="relative z-10 mx-auto max-w-7xl w-full lg:pl-20">
+        <div className="flex flex-col w-full">
+          <div className="max-w-4xl">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="mb-8 inline-flex items-center gap-2 rounded-full border border-black/5 bg-black/5 px-4 py-1.5"
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF1A1A] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#FF1A1A]"></span>
+              </span>
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-black/60">Available for Freelance</span>
+            </motion.div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="section-heading mb-8 relative"
-          >
-            <span className="relative z-10 block">WEB</span>
-            <span className="gradient-text block">DEVELOPER</span>
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="section-heading mb-8 relative !leading-[0.8]"
+            >
+              <span className="relative z-10 block">WEB</span>
+              <span className="gradient-text block">DEVELOPER</span>
 
-            {/* Subtle glow behind text */}
-            <div className="absolute -top-10 -left-10 w-full h-full bg-[#FF1A1A]/10 blur-[100px] -z-10 animate-pulse-glow" />
-          </motion.h1>
+              {/* Subtle glow behind text */}
+              <div className="absolute -top-10 -left-10 w-full h-full bg-[#FF1A1A]/10 blur-[100px] -z-10 animate-pulse-glow" />
+            </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="max-w-xl text-lg text-black/60 md:text-xl font-medium md:leading-relaxed mb-12"
-          >
-            Building modern,,  <span className="text-black font-bold"> AI-powered web experiences</span>  using React, JavaScript, Tailwind CSS, UI/UX
-            <span className="text-[#FF1A1A] font-bold"> and AI-integrated web apps</span>
-          </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="max-w-xl text-lg text-black/60 md:text-xl font-medium md:leading-relaxed mb-12"
+            >
+              Building modern,, <span className="text-black font-bold"> AI-powered web experiences</span> using React, JavaScript, Tailwind CSS, UI/UX
+              <span className="text-[#FF1A1A] font-bold"> and AI-integrated web apps</span>
+            </motion.p>
+          </div>
 
-          <div className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto lg:self-end mt-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
