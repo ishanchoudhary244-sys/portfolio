@@ -7,7 +7,7 @@ const projects = [
     category: 'Shoes E-commerce Platform',
     description: 'A high-performance neural engine for real-time edge computing and automated decision making.',
     tags: ['Next.js', 'TensorFlow', 'PostgreSQL'],
-    image: 'public/SHOES.png',
+    image: 'public/Screenshot 2026-01-30 113648.png',
     liveLink: 'https://shoes-web-nike-04.netlify.app/',
   },
   {
