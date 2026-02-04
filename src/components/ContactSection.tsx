@@ -125,13 +125,13 @@ const ContactSection = () => {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   style={{ pointerEvents: 'auto' }}
-                  className="w-full rounded-xl border-2 border-slate-600 bg-slate-800 px-4 py-3 text-white placeholder:text-slate-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors cursor-text"
+                  className="w-full rounded-xl border border-black/10 bg-white/50 backdrop-blur-md px-4 py-3 text-black placeholder:text-black/30 focus:border-[#FF1A1A] focus:outline-none focus:ring-2 focus:ring-[#FF1A1A]/10 transition-all cursor-text shadow-sm"
                   placeholder="Your name"
                   disabled={isLoading}
                 />
               </div>
               <div className="relative z-10">
-                <label htmlFor="email" className="block text-sm font-medium mb-2">
+                <label htmlFor="email" className="block text-sm font-bold text-black/80 mb-2">
                   Email
                 </label>
                 <input
@@ -140,14 +140,14 @@ const ContactSection = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   style={{ pointerEvents: 'auto' }}
-                  className="w-full rounded-xl border-2 border-slate-600 bg-slate-800 px-4 py-3 text-white placeholder:text-slate-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors cursor-text"
+                  className="w-full rounded-xl border border-black/10 bg-white/50 backdrop-blur-md px-4 py-3 text-black placeholder:text-black/30 focus:border-[#FF1A1A] focus:outline-none focus:ring-2 focus:ring-[#FF1A1A]/10 transition-all cursor-text shadow-sm"
                   placeholder="your@email.com"
                   disabled={isLoading}
                 />
               </div>
             </div>
             <div className="relative z-10">
-              <label htmlFor="message" className="block text-sm font-medium mb-2">
+              <label htmlFor="message" className="block text-sm font-bold text-black/80 mb-2">
                 Message
               </label>
               <textarea
@@ -156,7 +156,7 @@ const ContactSection = () => {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 style={{ pointerEvents: 'auto' }}
-                className="w-full rounded-xl border-2 border-slate-600 bg-slate-800 px-4 py-3 text-white placeholder:text-slate-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors resize-none cursor-text"
+                className="w-full rounded-xl border border-black/10 bg-white/50 backdrop-blur-md px-4 py-3 text-black placeholder:text-black/30 focus:border-[#FF1A1A] focus:outline-none focus:ring-2 focus:ring-[#FF1A1A]/10 transition-all resize-none cursor-text shadow-sm"
                 placeholder="Tell me about your project..."
                 disabled={isLoading}
               />
@@ -164,9 +164,9 @@ const ContactSection = () => {
             <motion.button
               type="submit"
               disabled={isLoading}
-              whileHover={{ scale: isLoading ? 1 : 1.02 }}
+              whileHover={{ scale: isLoading ? 1 : 1.02, y: -2 }}
               whileTap={{ scale: isLoading ? 1 : 0.98 }}
-              className="btn-gradient w-full flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="btn-gradient w-full flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed py-5"
             >
               {isLoading ? (
                 <>
@@ -180,16 +180,16 @@ const ContactSection = () => {
               ) : (
                 <>
                   <Send className="h-5 w-5" />
-                  Send Message
+                  <span className="text-sm font-bold tracking-widest uppercase">Send Message</span>
                 </>
               )}
             </motion.button>
           </form>
 
           {/* Social Links */}
-          <div className="mt-10 pt-8 border-t border-border">
-            <p className="text-center text-muted-foreground mb-6">Or connect with me on</p>
-            <div className="flex justify-center gap-4">
+          <div className="mt-12 pt-8 border-t border-black/5">
+            <p className="text-center text-xs font-bold uppercase tracking-[0.2em] text-black/40 mb-8">Or connect with me on</p>
+            <div className="flex justify-center gap-6">
               {socialLinks.map((social, index) => (
                 <motion.a
                   key={social.label}
@@ -198,9 +198,9 @@ const ContactSection = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  whileHover={{ scale: 1.1, y: -2 }}
+                  whileHover={{ scale: 1.1, y: -4, backgroundColor: 'rgba(255, 26, 26, 1)', borderColor: 'rgba(255, 26, 26, 1)', color: '#fff' }}
                   whileTap={{ scale: 0.9 }}
-                  className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary border border-border text-muted-foreground hover:text-foreground hover:border-primary transition-all"
+                  className="flex h-12 w-12 items-center justify-center rounded-full bg-black/5 border border-black/5 text-black/50 transition-all shadow-sm"
                   aria-label={social.label}
                 >
                   <social.icon className="h-5 w-5" />

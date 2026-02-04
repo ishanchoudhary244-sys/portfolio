@@ -7,7 +7,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative py-32 px-6 overflow-hidden border-t border-black/5">
+    <footer className="relative py-32 px-6 overflow-hidden">
       <div className="relative mx-auto max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center mb-24">
           <div>

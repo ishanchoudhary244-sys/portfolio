@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -46,10 +46,11 @@
   body {
     @apply bg-background text-foreground font-sans antialiased overflow-x-hidden;
     background:
-      radial-gradient(circle at 0% 0%, rgba(255, 77, 77, 0.05) 0%, transparent 50%),
-      radial-gradient(circle at 100% 0%, rgba(255, 107, 107, 0.05) 0%, transparent 50%),
-      radial-gradient(circle at 50% 50%, rgba(255, 229, 225, 0.3) 0%, transparent 100%),
-      #ffffff;
+      radial-gradient(circle at 0% 0%, rgba(255, 26, 26, 0.12) 0%, transparent 50%),
+      radial-gradient(circle at 100% 0%, rgba(225, 6, 0, 0.08) 0%, transparent 40%),
+      radial-gradient(circle at 100% 100%, rgba(255, 26, 26, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 0% 100%, rgba(225, 6, 0, 0.06) 0%, transparent 40%),
+      #fff9f9;
     background-attachment: fixed;
   }
 
@@ -60,7 +61,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.02;
+    opacity: 0.015;
     pointer-events: none;
     z-index: 9999;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3BaseFilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/feFilter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
@@ -105,12 +106,25 @@
     text-shadow: 0 0 20px rgba(255, 26, 26, 0.2);
   }
 
+  /* New Premium Button Gradient */
+  .btn-gradient {
+    @apply relative inline-flex items-center justify-center rounded-full px-8 py-4 text-[13px] font-bold uppercase tracking-widest text-white transition-all duration-300 hover:scale-[1.02] active:scale-95 overflow-hidden;
+    background: linear-gradient(135deg, #FF1A1A 0%, #B30000 100%);
+    box-shadow: 0 10px 25px -5px rgba(255, 26, 26, 0.4);
+  }
+
+  .btn-gradient:hover {
+    @apply shadow-xl;
+    box-shadow: 0 15px 35px -5px rgba(255, 26, 26, 0.5);
+    background: linear-gradient(135deg, #FF3333 0%, #CC0000 100%);
+  }
+
   /* White Glassmorphism Card */
   .glass-card {
     @apply relative overflow-hidden rounded-3xl transition-all duration-500;
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 26, 26, 0.05);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 26, 26, 0.08);
     box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04);
   }
 

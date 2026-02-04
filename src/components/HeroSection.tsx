@@ -24,13 +24,10 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="section-heading mb-8 relative !leading-[0.8]"
+              className="section-heading mb-8 relative !leading-[0.8] font-serif font-black tracking-[0.05em]"
             >
               <span className="relative z-10 block">WEB</span>
               <span className="gradient-text block">DEVELOPER</span>
-
-              {/* Subtle glow behind text */}
-              <div className="absolute -top-10 -left-10 w-full h-full bg-[#FF1A1A]/10 blur-[100px] -z-10 animate-pulse-glow" />
             </motion.h1>
 
             <motion.p
@@ -39,8 +36,7 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="max-w-xl text-lg text-black/60 md:text-xl font-medium md:leading-relaxed mb-12"
             >
-              Building modern,, <span className="text-black font-bold"> AI-powered web experiences</span> using React, JavaScript, Tailwind CSS, UI/UX
-              <span className="text-[#FF1A1A] font-bold"> and AI-integrated web apps</span>
+              Building modern,AI-powered web experiences,using React, JavaScript, Tailwind CSS, UI/UXand AI-integrated web apps
             </motion.p>
           </div>
 

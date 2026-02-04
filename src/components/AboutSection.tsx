@@ -32,7 +32,7 @@ const AboutSection = () => {
           className="text-center mb-16"
         >
           <span className="section-title">About Me</span>
-          <h2 className="mt-4 text-2xl font-bold sm:text-3xl lg:text-4xl">
+          <h2 className="mt-4 text-2xl font-bold sm:text-3xl lg:text-4xl text-black">
             Passionate about creating the{' '}
             <span className="gradient-text">future of the web</span>
           </h2>
@@ -87,8 +87,8 @@ const AboutSection = () => {
                 transition={{ delay: index * 0.2 }}
                 className="glass-card glow-border p-6 flex items-start gap-4"
               >
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary/20 to-accent/20">
-                  <feature.icon className="h-6 w-6 text-accent" />
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#FF1A1A]/10 border border-[#FF1A1A]/10">
+                  <feature.icon className="h-6 w-6 text-[#FF1A1A]" />
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>

@@ -48,7 +48,7 @@ const Navbar = () => {
     >
       <div className="mx-auto max-w-7xl px-6">
         <div className={`relative flex items-center justify-between px-8 py-3 rounded-full border transition-all duration-500 ${scrolled
-          ? 'bg-white/80 backdrop-blur-xl border-black/5 shadow-sm'
+          ? 'bg-black/40 backdrop-blur-xl border-white/5 shadow-sm'
           : 'bg-transparent border-transparent'
           }`}>
           <motion.a
@@ -59,7 +59,7 @@ const Navbar = () => {
             {/* <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#FF1A1A] shadow-lg shadow-red-500/20">
               <Code2 className="h-4 w-4 text-white" />
             </div> */}
-            <span className="text-lg font-black tracking-tighter text-black">ISHAN</span>
+            <span className={`text-2xl font-black tracking-tighter transition-colors duration-500 ${scrolled ? 'text-white' : 'text-black'}`}>ISHAN</span>
           </motion.a>
 
           {/* Desktop Navigation & Socials */}
@@ -69,10 +69,10 @@ const Navbar = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-[11px] font-bold uppercase tracking-[0.2em] text-black/50 transition-colors hover:text-[#FF1A1A] relative group"
+                  className={`text-[11px] font-bold uppercase tracking-[0.2em] transition-colors duration-500 relative group ${scrolled ? 'text-white/50 hover:text-white' : 'text-black/50 hover:text-black'}`}
                 >
                   {link.name}
-                  <span className="absolute -bottom-1 left-0 h-[1.5px] w-0 bg-[#FF1A1A] transition-all duration-300 group-hover:w-full" />
+                  <span className={`absolute -bottom-1 left-0 h-[1.5px] w-0 bg-[#FF1A1A] transition-all duration-300 group-hover:w-full`} />
                 </a>
               ))}
             </div>
@@ -80,7 +80,9 @@ const Navbar = () => {
             <div className="flex items-center gap-4 relative" ref={socialRef}>
               <button
                 onClick={() => setShowSocials(!showSocials)}
-                className={`flex items-center justify-center h-10 w-10 rounded-full border transition-all duration-300 ${showSocials ? 'bg-black border-black text-white' : 'bg-black/5 border-black/5 text-black hover:bg-black hover:text-white'
+                className={`flex items-center justify-center h-10 w-10 rounded-full border transition-all duration-300 ${showSocials
+                  ? (scrolled ? 'bg-white border-white text-black' : 'bg-black border-black text-white')
+                  : (scrolled ? 'bg-white/10 border-white/10 text-white hover:bg-white hover:text-black' : 'bg-black/5 border-black/5 text-black hover:bg-black hover:text-white')
                   }`}
               >
                 <MoreHorizontal className="h-5 w-5" />
@@ -92,7 +94,7 @@ const Navbar = () => {
                     initial={{ opacity: 0, y: 10, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                    className="absolute top-full right-0 mt-3 p-2 bg-white rounded-2xl border border-black/5 shadow-xl min-w-[160px]"
+                    className={`absolute top-full right-0 mt-3 p-2 rounded-2xl border shadow-xl min-w-[160px] ${scrolled ? 'bg-black border-white/5' : 'bg-white border-black/5'}`}
                   >
                     {socials.map((social) => (
                       <a
@@ -100,7 +102,7 @@ const Navbar = () => {
                         href={social.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-3 px-4 py-2.5 rounded-xl text-black/60 hover:text-black hover:bg-black/5 transition-all text-xs font-bold uppercase tracking-widest"
+                        className={`flex items-center gap-3 px-4 py-2.5 rounded-xl transition-all text-xs font-bold uppercase tracking-widest ${scrolled ? 'text-white/60 hover:text-white hover:bg-white/5' : 'text-black/60 hover:text-black hover:bg-black/5'}`}
                       >
                         {social.icon}
                         {social.name}
@@ -115,7 +117,7 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-black"
+            className={`md:hidden p-2 transition-colors duration-500 ${scrolled || isOpen ? 'text-white' : 'text-black'}`}
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -128,7 +130,7 @@ const Navbar = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              className="glass-card mt-4 overflow-hidden rounded-3xl md:hidden border-black/5 shadow-2xl"
+              className="glass-card mt-4 overflow-hidden rounded-3xl md:hidden border-black/5 shadow-2xl bg-white/70 backdrop-blur-xl"
             >
               <div className="flex flex-col p-6 gap-2">
                 {navLinks.map((link) => (

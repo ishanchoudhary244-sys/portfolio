@@ -32,14 +32,6 @@ const ProjectsSection = () => {
       <div className="mx-auto max-w-7xl relative z-10">
         <div className="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-12">
           <div className="max-w-2xl">
-            <motion.span
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="section-subheading"
-            >
-
-            </motion.span>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -50,14 +42,6 @@ const ProjectsSection = () => {
               <span className="gradient-text">PROJECTS</span>
             </motion.h2>
           </div>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            className="max-w-xs text-black/50 text-base leading-relaxed border-l border-black/5 pl-8"
-          >
-            A curated selection of intelligent systems bridging the gap between human intuition and machine precision.
-          </motion.p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -78,7 +62,7 @@ const ProjectsSection = () => {
                 />
 
                 {/* AI Overlay on hover */}
-                <div className="absolute inset-0 bg-white/20 opacity-0 backdrop-blur-md transition-opacity duration-500 group-hover:opacity-100 flex items-center justify-center gap-8">
+                <div className="absolute inset-0 bg-white/10 opacity-0 backdrop-blur-md transition-opacity duration-500 group-hover:opacity-100 flex items-center justify-center gap-8">
                   <a href="#" className="h-16 w-16 rounded-full bg-black text-white flex items-center justify-center transition-all hover:scale-110 hover:shadow-xl active:scale-95">
                     <Github className="h-7 w-7" />
                   </a>
