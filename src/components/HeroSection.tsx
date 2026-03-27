@@ -24,10 +24,10 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="section-heading mb-8 relative !leading-[0.8] font-serif font-black tracking-[0.05em]"
+              className="mb-8 font-display font-black tracking-tighter leading-[0.9]"
             >
-              <span className="relative z-10 block">WEB</span>
-              <span className="gradient-text block">DEVELOPER</span>
+              <span className="block text-6xl md:text-8xl lg:text-9xl text-black">WEB</span>
+              <span className="block text-6xl md:text-8xl lg:text-9xl text-primary">DEVELOPER</span>
             </motion.h1>
 
             <motion.p

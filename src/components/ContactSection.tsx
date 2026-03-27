@@ -38,7 +38,15 @@ const ContactSection = () => {
     setSubmitStatus('idle');
 
     try {
-      await emailjs.send(
+      console.log('Attempting to send email with:', {
+        service_id: 'service_0oc9agk',
+        template_id: 'template_5hb93mt',
+        to_email: 'ishanchoudhary244@gmail.com',
+        from_name: name,
+        from_email: email,
+      });
+
+      const result = await emailjs.send(
         'service_0oc9agk',
         'template_5hb93mt',
         {
@@ -46,18 +54,20 @@ const ContactSection = () => {
           from_name: name,
           from_email: email,
           message: message,
-        }
+        },
+        'r_LffnwxU3nhUIyNb' // Public Key
       );
 
+      console.log('Email successfully sent!', result.status, result.text);
       setSubmitStatus('success');
       setName('');
       setEmail('');
       setMessage('');
       setTimeout(() => setSubmitStatus('idle'), 5000);
-    } catch (error) {
+    } catch (error: any) {
       console.error('Email send error:', error);
       setSubmitStatus('error');
-      setErrorMessage('Failed to send message. Please try again later.');
+      setErrorMessage(`Failed to send message: ${error?.text || error?.message || 'Please try again later.'}`);
       setTimeout(() => setSubmitStatus('idle'), 5000);
     } finally {
       setIsLoading(false);

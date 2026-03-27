@@ -1,69 +1,95 @@
 import { motion } from 'framer-motion';
-import { Layout, Code, Zap, Smartphone, Globe, Shield, ArrowUpRight } from 'lucide-react';
+import { 
+  Code, 
+  Cpu, 
+  Globe, 
+  Layers, 
+  Video, 
+  Wand2, 
+  Zap,
+  Terminal,
+  Database,
+  Cloud
+} from 'lucide-react';
 
-const services = [
+const skillCategories = [
   {
-    title: 'AI Development',
-    description: 'Expertly crafting high-performance, scalable web applications with advanced AI integration and modern tech stacks.',
+    title: 'Development Stack',
     icon: <Code className="h-6 w-6" />,
+    skills: ['React 18', 'bootstrap', 'Vite', 'Next.js', 'Tailwind CSS', 'wordpress' , 'javascript']
   },
   {
-    title: 'Futuristic Design',
-    description: 'Creating premium, AI-style digital experiences with focus on motion design and user-centric interfaces.',
-    icon: <Layout className="h-6 w-6" />,
+    title: 'AI & Video Generation',
+    icon: <Wand2 className="h-6 w-6" />,
+    skills: ['Veo 3', 'Luma Dream Machine', 'Kling AI', 'Midjourney']
   },
   {
-    title: 'Hyper Performance',
-    description: 'Optimizing core web vitals and AI inference speeds for maximum efficiency and seamless user experience.',
-    icon: <Zap className="h-6 w-6" />,
-  },
+    title: 'Tools & Workflows',
+    icon: <Terminal className="h-6 w-6" />,
+    skills: ['Git / GitHub', 'Bun / NPM', 'EmailJS', 'Framer Motion', 'Vercel']
+  }
 ];
 
 const SkillsSection = () => {
   return (
-    <section id="skills" className="relative py-32 px-6 overflow-hidden">
+    <section id="skills" className="relative py-32 px-6 overflow-hidden bg-background">
+      {/* Background Decorative Elements */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
+      
       <div className="relative mx-auto max-w-7xl">
-        <div className="mb-24">
-          <motion.span
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="section-subheading"
-          >
-            Capabilities
-          </motion.span>
-          <motion.h2
+        <div className="mb-20">
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="section-heading"
+            className="flex flex-col gap-4"
           >
-            INTELLIGENT <br />
-            <span className="gradient-text">SOLUTIONS</span>
-          </motion.h2>
+            <span className="text-primary font-bold tracking-[0.3em] uppercase text-sm">Expertise</span>
+            <h2 className="text-4xl md:text-6xl font-black text-black leading-tight uppercase">
+              TECH <span className="gradient-text italic">STACK</span>
+            </h2>
+            <div className="h-1.5 w-24 bg-primary" />
+          </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {skillCategories.map((category, catIndex) => (
             <motion.div
-              key={service.title}
+              key={category.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="glass-card group p-12 hover:border-[#FF1A1A]/20"
+              transition={{ delay: catIndex * 0.1 }}
+              className="group"
             >
-              <div className="mb-10 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-white shadow-sm border border-black/5 text-[#FF1A1A] transition-all group-hover:bg-[#FF1A1A] group-hover:text-white group-hover:scale-110 group-hover:rotate-3 group-hover:shadow-lg group-hover:shadow-red-500/20">
-                {service.icon}
-              </div>
-              <h3 className="text-xl font-black mb-4 text-black uppercase tracking-tight leading-none">{service.title}</h3>
-              <p className="text-black/50 text-base leading-relaxed mb-10">
-                {service.description}
-              </p>
+              <div className="glass-card p-10 h-full border-primary/5 hover:border-primary/20 transition-all duration-500 hover:-translate-y-2 bg-white/50 backdrop-blur-sm">
+                <div className="mb-8 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-black text-white group-hover:bg-primary transition-colors duration-500 shadow-xl group-hover:shadow-primary/20">
+                  {category.icon}
+                </div>
+                
+                <h3 className="text-2xl font-black mb-8 text-black uppercase tracking-tight">
+                  {category.title}
+                </h3>
+                
+                <div className="flex flex-wrap gap-2">
+                  {category.skills.map((skill, skillIndex) => (
+                    <motion.span
+                      key={skill}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: (catIndex * 0.1) + (skillIndex * 0.05) }}
+                      className="px-4 py-2 rounded-xl bg-black text-white text-xs font-bold uppercase tracking-wider group-hover:bg-primary/10 group-hover:text-primary transition-all duration-300 border border-transparent group-hover:border-primary/20"
+                    >
+                      {skill}
+                    </motion.span>
+                  ))}
+                </div>
 
-              <div className="flex items-center justify-between">
-                <div className="h-[1px] w-12 bg-black/10 group-hover:w-full group-hover:bg-[#FF1A1A]/20 transition-all duration-500" />
-                <ArrowUpRight className="h-5 w-5 text-black/20 group-hover:text-[#FF1A1A] transition-colors" />
+                <div className="mt-12 flex items-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="h-[2px] flex-1 bg-gradient-to-r from-primary to-transparent" />
+                  <Zap className="h-4 w-4 text-primary animate-pulse" />
+                </div>
               </div>
             </motion.div>
           ))}
