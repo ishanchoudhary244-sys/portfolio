@@ -7,7 +7,7 @@ const videos = [
     id: 1,
     title: "Final AI Video",
     description: "The custom cinematic AI video generated using the master prompt.",
-    thumbnail: "/assets/cyberpunk/city_neon_rain.png",
+    thumbnail: "/assets/thumbnail.png",
     videoUrl: "/assets/ai-video.mp4"
   }
 ];
