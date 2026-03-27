@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, ArrowUpRight } from 'lucide-react';
+import { ExternalLink, ArrowUpRight } from 'lucide-react';
 
 const projects = [
   {
@@ -63,9 +63,6 @@ const ProjectsSection = () => {
 
                 {/* AI Overlay on hover */}
                 <div className="absolute inset-0 bg-white/10 opacity-0 backdrop-blur-md transition-opacity duration-500 group-hover:opacity-100 flex items-center justify-center gap-8">
-                  <a href="#" className="h-16 w-16 rounded-full bg-black text-white flex items-center justify-center transition-all hover:scale-110 hover:shadow-xl active:scale-95">
-                    <Github className="h-7 w-7" />
-                  </a>
                   <a
                     href={project.liveLink || "#"}
                     target="_blank"
