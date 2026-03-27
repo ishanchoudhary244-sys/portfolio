@@ -1,5 +1,6 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Play } from 'lucide-react';
 
 const videos = [
   {
@@ -12,6 +13,20 @@ const videos = [
 ];
 
 const AIVideoSection = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const togglePlay = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
   return (
     <section id="ai-videos" className="py-24 bg-secondary/30 relative overflow-hidden text-white">
       <div className="container mx-auto px-6 relative z-10">
@@ -39,18 +54,34 @@ const AIVideoSection = () => {
               transition={{ duration: 0.8, ease: "easeOut" }}
               viewport={{ once: true }}
               className="relative aspect-video rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(var(--primary-rgb),0.3)] border border-primary/20 group cursor-pointer"
+              onClick={togglePlay}
+              translate="no"
             >
               <video 
+                ref={videoRef}
                 src={video.videoUrl} 
                 poster={video.thumbnail}
-                controls
+                onPlay={() => setIsPlaying(true)}
+                onPause={() => setIsPlaying(false)}
                 className="w-full h-full object-cover"
+                translate="no"
+                controlsList="nodownload nofullscreen noremoteplayback"
               />
               
-              <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <h3 className="text-2xl font-bold mb-2 text-primary">{video.title}</h3>
-                <p className="text-gray-300 text-lg">{video.description}</p>
-              </div>
+              <AnimatePresence>
+                {!isPlaying && (
+                  <motion.div 
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 1.2 }}
+                    className="absolute inset-0 flex items-center justify-center bg-black/20 backdrop-blur-[2px] "
+                  >
+                    <div className="w-24 h-24 rounded-full bg-primary/90 flex items-center justify-center shadow-[0_0_30px_rgba(var(--primary-rgb),0.5)] group-hover:scale-110 transition-transform duration-300">
+                      <Play className="text-white fill-white ml-2" size={40} />
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </motion.div>
           ))}
         </div>
