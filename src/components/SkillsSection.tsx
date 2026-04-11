@@ -1,15 +1,8 @@
 import { motion } from 'framer-motion';
 import { 
   Code, 
-  Cpu, 
-  Globe, 
-  Layers, 
-  Video, 
-  Wand2, 
   Zap,
-  Terminal,
-  Database,
-  Cloud
+  Terminal
 } from 'lucide-react';
 
 const skillCategories = [
@@ -17,11 +10,6 @@ const skillCategories = [
     title: 'Development Stack',
     icon: <Code className="h-6 w-6" />,
     skills: ['React 18', 'bootstrap', 'Vite', 'Next.js', 'Tailwind CSS', 'wordpress' , 'javascript']
-  },
-  {
-    title: 'AI & Video Generation',
-    icon: <Wand2 className="h-6 w-6" />,
-    skills: ['Veo 3', 'Luma Dream Machine', 'Kling AI', 'Midjourney']
   },
   {
     title: 'Tools & Workflows',
@@ -52,7 +40,7 @@ const SkillsSection = () => {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {skillCategories.map((category, catIndex) => (
             <motion.div
               key={category.title}
