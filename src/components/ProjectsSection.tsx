@@ -3,26 +3,36 @@ import { ExternalLink, ArrowUpRight } from 'lucide-react';
 
 const projects = [
   {
+    title: 'Car Landing Page',
+    category: 'Automotive Web Design',
+    description: 'A sleek and modern landing page designed to showcase high-performance vehicles with stunning imagery.',
+    tags: ['HTML', 'CSS', 'JavaScript'],
+    image: '/projects/Car%20landing%20page/img/bg.jpg',
+    liveLink: '/projects/Car%20landing%20page/index.htm',
+  },
+  {
+    title: 'Food Ordering Website',
+    category: 'Restaurant Web App',
+    description: 'A comprehensive food ordering platform with category browsing, search functionality, and a beautiful UI.',
+    tags: ['HTML', 'CSS', 'JavaScript'],
+    image: '/projects/foodwebsite/img/search-bg.jpg',
+    liveLink: '/projects/foodwebsite/index.html',
+  },
+  {
+    title: 'ShopMe eCommerce',
+    category: 'Online Store',
+    description: 'A fully functional modern eCommerce application with product listings, cart functionality, and responsive design.',
+    tags: ['React', 'Tailwind CSS', 'Vite'],
+    image: '/projects/shopMe_Ecommerce/assets/4547829-b6as_e6x.jpg',
+    liveLink: '/projects/shopMe_Ecommerce/index.html',
+  },
+  {
     title: 'Nike Shoes Website',
     category: 'Nike E-commerce',
     description: 'A premium, responsive e-commerce experience for Nike footwear with modern design and smooth interactions.',
     tags: ['React', 'Tailwind CSS', 'Vite'],
     image: '/Screenshot 2026-01-30 113648.png',
     liveLink: 'https://shoes-web-nike-04.netlify.app/',
-  },
-  {
-    title: 'Neural Analytics',
-    category: 'Data Intelligence',
-    description: 'Advanced data visualization dashboard powered by predictive machine learning algorithms.',
-    tags: ['React', 'D3.js', 'PyTorch'],
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop',
-  },
-  {
-    title: 'Sentience Mobile',
-    category: 'Intelligent App',
-    description: 'Next-gen mobile experience with voice-first interface and adaptive user learning.',
-    tags: ['React Native', 'Firebase', 'OpenAI'],
-    image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=500&fit=crop',
   },
 ];
 

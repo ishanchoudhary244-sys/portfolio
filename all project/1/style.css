@@ -1,0 +1,50 @@
+body{
+    background-image: url("back.avif");
+    background-size: cover;
+}
+/* head */
+.ASD{
+
+color: darkblue;
+
+}
+h1,h2,h3,h4,h5,h6
+{
+    color:red;
+}
+
+img {
+    height: 200px
+}
+
+
+
+ol {
+    color: darkturquoise
+}
+
+td {
+    color: aquamarine
+}
+
+tr {
+    color: cornflowerblue
+}
+
+
+form {
+    border: 9px solid rgb(231, 234, 222);
+    color: cyan;
+    background-color: rgb(236, 235, 234); 
+    border-radius: 10px;
+}
+button{
+    background-color: RED;
+    color: aliceblue;
+    border: none;
+    height: 30PX;
+    width: 100PX;
+    border-radius: 2PX;
+    cursor:pointer;
+
+}
